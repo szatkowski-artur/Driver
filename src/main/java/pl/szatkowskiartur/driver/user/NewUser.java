@@ -11,7 +11,7 @@ import pl.szatkowskiartur.driver.validation.constrains.UsernameExist;
 import javax.validation.constraints.*;
 
 @Data
-//@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @RetypedPassword
 public class NewUser {
 

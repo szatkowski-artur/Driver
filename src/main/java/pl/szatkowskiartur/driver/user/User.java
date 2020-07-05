@@ -7,9 +7,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import pl.szatkowskiartur.driver.role.Role;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Data
 @EqualsAndHashCode(of = "id")
 @Document(collection = "Users")
