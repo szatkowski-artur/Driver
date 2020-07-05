@@ -2,7 +2,6 @@ package pl.szatkowskiartur.driver.user;
 
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import pl.szatkowskiartur.driver.validation.constrains.EmailExist;
 import pl.szatkowskiartur.driver.validation.constrains.RetypedPassword;
@@ -16,7 +15,7 @@ import javax.validation.constraints.*;
 public class NewUser {
 
     @NotBlank
-    @Size(min = 3, message = "Username must be at least e characters")
+    @Size(min = 3, message = "Username must be at least 3 characters")
     @UsernameExist
     String username;
 
@@ -27,13 +26,13 @@ public class NewUser {
 
     @NotBlank
     @Size(min = 8, message = "Password must be at least 6 characters")
-    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])$", message = "Password must contain uppercase and lowercase letter and a digit")
+    @Pattern(regexp = "^(?=.*\\d+)(?=.*[a-z]+)(?=.*[A-Z]+).*$", message = "Password must contain uppercase and lowercase letter and a digit")
     String password;
 
     @NotBlank
     String rePassword;
 
-    @AssertTrue
+    @AssertTrue(message = "Terms & conditions must be accepted")
     @NotNull
     Boolean termsAndConditions;
 

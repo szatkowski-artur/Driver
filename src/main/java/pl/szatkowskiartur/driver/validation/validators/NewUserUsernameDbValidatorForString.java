@@ -19,6 +19,6 @@ public class NewUserUsernameDbValidatorForString implements ConstraintValidator<
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return userRepository.existsByUsername(username);
+        return !userRepository.existsByUsername(username);
     }
 }

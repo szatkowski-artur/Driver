@@ -19,6 +19,6 @@ public class NewUserEmailDbValidatorForString implements ConstraintValidator<Ema
 
     @Override
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
-        return userRepository.existsByEmail(email);
+        return !userRepository.existsByEmail(email);
     }
 }
